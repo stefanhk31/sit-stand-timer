@@ -33,6 +33,7 @@ class App extends Component {
     this.resetTimer = this.resetTimer.bind(this);
     this.countdown = this.countdown.bind(this);
     this.playAudio = this.playAudio.bind(this);
+    this.makeAlert = this.makeAlert.bind(this);
   }
 
   //set currentTime to either SitTime or StandTime on load
@@ -123,6 +124,7 @@ class App extends Component {
 
     if (this.state.running && this.state.currentTime.get('minutes') <= 0 && this.state.currentTime.get('seconds') <= 0)  {
       this.playAudio();
+      this.makeAlert();
       this.switchLabel();
       this.switchTimer();
     }
@@ -132,6 +134,12 @@ class App extends Component {
  playAudio() {
    const beep = document.getElementById("beep");
    beep.play();
+ }
+
+ makeAlert() {
+   const sitDown = "Sit Down!"
+   const standUp = "Stand Up!"
+   return (this.state.label === 'SIT' ? alert(standUp) : alert(sitDown))
  }
 
 

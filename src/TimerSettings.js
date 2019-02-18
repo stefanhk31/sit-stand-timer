@@ -56,22 +56,21 @@ class TimerSettings extends Component {
     }
 
     render() {
+        
         return (
             <div className="text-center timer-settings">
                 <div className="row settings-row">
-                    <div className="col-xs-1 btn btn-primary" id="Sit-increment" onClick={this.handleSitClick}>+</div> 
-                    <div className="col-xs-1" id="Sit-label">Sit:&nbsp;</div>
-                    <div className="col-xs-1" id="Sit-length">{this.props.SitTime.get('minutes')}:00&nbsp;</div>
-                    <div className="col-xs-1 btn btn-primary" id="Sit-decrement" onClick={this.handleSitClick}>-</div> 
+                    <div className="col-xs-1 btn btn-primary inc-dec" id="Sit-increment" onClick={this.handleSitClick}>+</div> 
+                    <div className="col-xs-1 settings-label">Sit:&nbsp;{this.props.SitTime.get('minutes')}:00&nbsp;</div>
+                    <div className="col-xs-1 btn btn-primary inc-dec" id="Sit-decrement" onClick={this.handleSitClick}>-</div> 
                 </div>
                 <div className="row settings-row">
-                    <div className="col-xs-1 btn btn-primary" id="Stand-increment" onClick={this.handleStandClick}>+</div>
-                    <div className="col-xs-1" id="Stand-label">Stand:&nbsp;</div>
-                    <div className="col-xs-1" id="Stand-length">{this.props.StandTime.get('minutes')}:00&nbsp;</div>
-                    <div className="col-xs-1 btn btn-primary" id="Stand-decrement" onClick={this.handleStandClick}>-</div> 
+                    <div className="col-xs-1 btn btn-primary inc-dec" id="Stand-increment" onClick={this.handleStandClick}>+</div>
+                    <div className="col-xs-1 settings-label">Stand:&nbsp;{this.props.StandTime.get('minutes')}:00&nbsp;</div>
+                    <div className="col-xs-1 btn btn-primary inc-dec" id="Stand-decrement" onClick={this.handleStandClick}>-</div> 
                 </div>
                 <div className="row settings-row">
-                    <div className="col-md-1 text-primary text-center font-weight-bold" id="timer-label">{this.props.label}</div>
+                    <div className="col-xl-12 font-weight-bold" id="timer-label">{this.props.label}</div>
                 </div>
             </div>
         )   
